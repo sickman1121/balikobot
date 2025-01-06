@@ -1,0 +1,6 @@
+{
+    "require": {
+        "sensio/framework-extra-bundle": "*",
+        "symfony/flex": "*"
+    }
+}
