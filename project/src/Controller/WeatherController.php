@@ -21,12 +21,15 @@ class WeatherController extends AbstractController
     /**
      * @Route("/api/weather", methods={"POST"})
      */
+    //problem 1. zacneme controllerem, jedeme principem kiss takze jenom co chci, proc to chci a muzu to chtit
+    // jen bych rad podotkl ze se mi nepodaril projekt rozjet protoze mam nekde hloupou chybu... takze vse je psane naslepo
     public function listWeather(Request $request): JsonResponse
     {
         $city = $request->post('city');
 
         $cityValidator = new CityValidator($city);
 
+        //mesto je validni jdeme dal...
         if(!$cityValidator->isCityValid()){
             return new JsonResponse(Response::HTTP_UNPROCESSABLE_ENTITY);
         }
